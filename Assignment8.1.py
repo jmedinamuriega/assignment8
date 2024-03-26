@@ -11,20 +11,24 @@ while True:
     except ValueError:
         print("Please put numbers :D")
         
+print("Here is the list of temperatures in farenheit!: ") 
+for i in farenheit:
+    print(f"{i}f")       
         
-greetings="Thanks for ussing the whether application"
+greetings="Thanks for ussing the wheather application"
 celsius_list=[]
 def far_cel(celsius_list):
     try:
-        for temps in range(len(farenheit)):
+        celsius_list=[]
+        for temps in farenheit:
             celsius=(temps-32)*5/9
-            celsius_list.append(celsius)
+            celsius_list.append(celsius)   
     except ZeroDivisionError:
         print("I can't divide by zero")  
     except OverflowError:
         print("Too much numbers")
     else:
-        print(f"here is a complete list of the temperatures in celsius {["%.2f" % elem for elem in celsius_list]}")
+        print(f"here is a complete list of the temperatures in celsius {["%.1f" % elem for elem in celsius_list]}")
     finally:
         print(greetings)
         
@@ -41,7 +45,7 @@ try:
     if servings=="0":
         raise ValueError("You can't have 0 dishes")
     else:
-        print("Here is the ammount of ingredients that you are going to need!")
+        print(f"Here is the ammount of ingredients that you are going to need!: {["%.1f"%adjusment]}")
 except ValueError:
     print("Please put just numbers! :D")
 except ZeroDivisionError:
